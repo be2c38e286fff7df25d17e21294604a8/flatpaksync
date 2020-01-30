@@ -1,0 +1,7 @@
+data/com.github.be2c38e286fff7df25d17e21294604a8.flatpaksync.desktop.in
+data/com.github.be2c38e286fff7df25d17e21294604a8.flatpaksync.appdata.xml.in
+data/com.github.be2c38e286fff7df25d17e21294604a8.flatpaksync.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+

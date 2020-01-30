@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=flatpaksync
+Exec=flatpaksync
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true
