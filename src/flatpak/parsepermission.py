@@ -24,8 +24,9 @@ class parsepermission:
     def getPermissions(self):
         return self.permlist
 
-    def safetype(self, pername: str):
+    def safetype(self, permname: str):
         """
+        List of permissions
         'share':
         'unshare':
         'socket':
@@ -47,3 +48,19 @@ class parsepermission:
         'system-no-talk-name':
         'persist':
         """
+
+        options = {
+            'filesystems': 'filesystem',
+            'filesystem': 'filesystem',
+            'sockets': 'socket',
+            'persist': 'persist',
+            'env': 'env',
+            'persist': 'persist',
+        }
+
+        return options.get(permname, 'invalid');
+
+
+#name="filesystemss"
+#p=parsepermission()
+#print(p.safetype(name))

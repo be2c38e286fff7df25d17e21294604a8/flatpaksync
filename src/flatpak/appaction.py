@@ -5,6 +5,9 @@ from .parseapp import parseapp
 
 
 class appaction:
+    """
+    flatpak application commands like install an app, remove an app
+    """
 
     def install(self, app: app) -> bool:
         cmd = "flatpak install --assumeyes --noninteractive {} {}".format(app.getRepoName(), app.getAppId())

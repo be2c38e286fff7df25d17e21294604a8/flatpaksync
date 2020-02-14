@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2020 Jete O'Keeffe
+# Copyright 2020
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,12 +17,32 @@
 
 from gi.repository import Gtk
 
+from .about import FlatpaksyncAbout
+from .flatpak.flatpakcmd import flatpakcmd
 
 @Gtk.Template(resource_path='/com/github/be2c38e286fff7df25d17e21294604a8/flatpaksync/window.ui')
 class FlatpaksyncWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'FlatpaksyncWindow'
 
-    label = Gtk.Template.Child()
+    headerbar = Gtk.Template.Child()
+    menu_btn = Gtk.Template.Child()
+    sync_btn = Gtk.Template.Child()
+    about_menu = Gtk.Template.Child()
+    preferences_menu = Gtk.Template.Child()
+
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.setup()
+
+
+    def setup(self):
+        self.sync_btn.connect("clicked", self.on_sync)
+        self.about_menu.connect("activate", self.on_sync)
+        self.preferences_menu.connect("activate", self.on_sync)
+        #fp = flatpak()
+
+
+    def on_sync(self, widget):
+        about=FlatpaksyncAbout()
+        about.present()

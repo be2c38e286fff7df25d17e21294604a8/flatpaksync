@@ -1,4 +1,4 @@
-from .permission import permission
+from permission import permission
 
 class permissionlist:
 

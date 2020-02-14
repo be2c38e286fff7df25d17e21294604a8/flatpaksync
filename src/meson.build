@@ -29,6 +29,14 @@ flatpaksync_sources = [
   '__init__.py',
   'main.py',
   'window.py',
+  'about.py',
 ]
 
 install_data(flatpaksync_sources, install_dir: moduledir)
+
+
+fp_sources = [
+  'flatpak/__init__.py',
+  'flatpak/flatpakcmd.py'
+]
+install_data(fp_sources, install_dir: join_paths(moduledir, 'flatpak') )

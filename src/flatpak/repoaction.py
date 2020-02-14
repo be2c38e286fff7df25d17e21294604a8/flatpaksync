@@ -5,9 +5,11 @@ from .parserepo import parserepo
 
 class repoaction:
 
+    def __init__(self):
+        self.type = "user"
 
     def add(self, repo: repo) -> bool:
-        cmd = "flatpak remote-add --if-not-exists {} {} ".format(repo.getName(), repo.getLocation())
+        cmd = "flatpak remote-add --if-not-exists --{} {} {} ".format(self.type, repo.getName(), repo.getLocation())
         result=subprocess.run(cmd, shell=True, universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         #print(result.stdout)
         #print(result.stderr)

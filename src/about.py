@@ -1,6 +1,4 @@
-#!@PYTHON@
-
-# flatpaksync.in
+# about.py
 #
 # Copyright 2020
 #
@@ -17,25 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import os
-import sys
-import signal
-import gettext
+from gi.repository import Gtk
 
-VERSION = '@VERSION@'
-pkgdatadir = '@pkgdatadir@'
-localedir = '@localedir@'
 
-sys.path.insert(1, pkgdatadir)
-signal.signal(signal.SIGINT, signal.SIG_DFL)
-gettext.install('flatpaksync', localedir)
+@Gtk.Template(resource_path='/com/github/be2c38e286fff7df25d17e21294604a8/flatpaksync/about.ui')
+class FlatpaksyncAbout(Gtk.AboutDialog):
+    __gtype_name__ = 'AboutDialog'
 
-if __name__ == '__main__':
-    import gi
-
-    from gi.repository import Gio
-    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'flatpaksync.gresource'))
-    resource._register()
-
-    from flatpaksync import main
-    sys.exit(main.main(VERSION))
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)

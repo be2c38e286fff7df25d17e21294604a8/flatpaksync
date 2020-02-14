@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/com/github/be2c38e286fff7df25d17e21294604a8/flatpaksync">
     <file>window.ui</file>
+    <file>about.ui</file>
   </gresource>
 </gresources>

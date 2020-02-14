@@ -1,7 +1,7 @@
 import subprocess
 
 
-class flatpak:
+class flatpakcmd:
     """
     """
 
